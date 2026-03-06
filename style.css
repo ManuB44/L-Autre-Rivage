@@ -356,3 +356,9 @@ a:hover{ text-decoration:underline; text-underline-offset:4px; }
   font-size: .85rem;
   opacity: .75;
 }
+.fragments-link{
+  width: 100%;
+  max-width: 808px;   /* 3 cartes de 260px + 2 gaps de 1rem */
+  margin: .6rem auto 0;
+  text-align: left;
+}
