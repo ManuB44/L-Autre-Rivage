@@ -350,14 +350,12 @@ a:hover{ text-decoration:underline; text-underline-offset:4px; }
   opacity: .7;
 }
 /* Lien + hint compact */
-.cardlink{ font-size: .85rem; }
-.hint{
-  margin-top: .55rem;
-  font-size: .85rem;
-  opacity: .75;
+.fragments-wrap{
+  width: fit-content;
+  margin: 0 auto;
 }
+
 .fragments-link{
-  max-width: 808px;   /* largeur des 3 cartes + espaces */
-  margin: .6rem auto 0;
+  margin: .5rem 0 0 0;
   text-align: left;
 }
