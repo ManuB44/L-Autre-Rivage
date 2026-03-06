@@ -160,24 +160,7 @@ a:hover{ text-decoration:underline; text-underline-offset:4px; }
 /* Cards */
 .grid{ display:grid; gap:1.1rem; }
 .grid.two{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.cards{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 1600px;
-  margin: auto;
-}.card{
-  min-height: 200px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns: repeat(3, 350px); 
-  justify-content:center;
-  gap:1rem;
-  margin:auto;
-}
+.cards{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .card, .panel{
   border: 1px solid rgba(230,230,230,.12);
@@ -319,40 +302,27 @@ a:hover{ text-decoration:underline; text-underline-offset:4px; }
   margin:.35rem 0 .55rem;
 }
 
-/* ===== CARTES COMPACTES (index + fragments) : moitié moins haut ===== */
-
-/* Grille plus serrée */
-.grid{ gap: .75rem; }
-
-/* Cartes plus compactes */
-.card{
-  padding: .85rem .95rem;
-  box-shadow: 0 12px 40px rgba(0,0,0,.28);
+/* Responsive fin */
+@media (max-width: 640px){
+  .cards, .grid.two{ grid-template-columns: 1fr; }
+  .row{ grid-template-columns: 1fr; }
+  .brand-title{ display:none; }
+  .cards{ grid-template-columns: 1fr; }
 }
-/* Texte plus petit et marges réduites */
-.card{
-  padding: .45rem .6rem;
-  box-shadow: 0 10px 28px rgba(0,0,0,.24);
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
-.card h3{
-  margin: .15rem 0 .25rem;
-  font-size: .75rem;
-  line-height: 1.15;
+* Chemin vers votre image de fond */
+body {
+   body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("C:\Users\manub\Desktop\Site\lautre-rivage\assets\images\Forêt enchantée sous lumière éthérée (1).png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.excerpt{
-  margin: 0 0 .45rem;
-  font-size: .85rem;
-  line-height: 1.35;
-}
-.hint{
-  margin-top: .4rem;
-  font-size: .8rem;
-  opacity: .7;
-}
-/* Lien + hint compact */
-.cardlink{ font-size: .85rem; }
-.hint{
-  margin-top: .55rem;
-  font-size: .85rem;
-  opacity: .75;
 }
