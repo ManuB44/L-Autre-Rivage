@@ -3,107 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fragments — L’Autre Rivage</title>
-  <meta name="description" content="Fragments, textes et éclats du monde de L’Autre Rivage.">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <title>Fragments du Rivage | Textes, archives et éclats du monde</title>
+  <meta name="description" content="Explorez les fragments de L’Autre Rivage : textes, archives, seuils, vestiges, transmissions et traces narratives.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://manub44.github.io/L-Autre-Rivage/fragments.html">
+  <meta property="og:title" content="Fragments du Rivage">
+  <meta property="og:description" content="Textes, archives et éclats du monde à découvrir.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://manub44.github.io/L-Autre-Rivage/fragments.html">
+  <meta property="og:image" content="https://manub44.github.io/L-Autre-Rivage/assets/images/og-fragments.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container navbar">
     <a href="index.html" class="logo">L’Autre Rivage</a>
-
     <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-
     <nav id="site-nav" class="site-nav">
       <a href="index.html">Accueil</a>
       <a href="fragments.html" aria-current="page">Fragments</a>
+      <a href="boutique.html">Boutique PDF</a>
       <a href="bestiaire.html">Bestiaire</a>
       <a href="cartes-du-rivage.html">Cartes</a>
       <a href="chronologie.html">Chronologie</a>
-      <a href="pages/jdr/jeu-de-role.html">Jeu de rôle</a>
+      <a href="pages/jdr/jeu-de-role.html">JDR</a>
       <a href="a-propos.html">À propos</a>
-      <a href="newsletter.html">Newsletter</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="page-content">
+<main>
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Fragments</p>
       <h1>Les éclats du monde</h1>
-      <p class="lead">
-        Ce que l’on trouve ici n’est jamais complet. Seulement des traces, des lois anciennes,
-        des noms rongés par le silence et des récits qui refusent encore de mourir.
+      <p class="page-lead">
+        Ici, le Rivage se révèle par morceaux : archives incomplètes, transmissions troublées,
+        lois anciennes, noms effacés et textes qui semblent revenir de plus loin que la mémoire.
       </p>
-
-      <div class="hero-actions">
-        <a href="#fragments-liste" class="btn btn-primary">Explorer les fragments</a>
+      <div class="page-actions">
+        <a class="btn btn-primary" href="assets/pdf/fragment-introduction.pdf" target="_blank" rel="noopener">Télécharger un extrait</a>
+        <a class="btn btn-secondary" href="boutique.html">Voir tous les PDF</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="fragments-liste">
+  <section class="section">
     <div class="container">
-      <div class="cards-grid">
+      <div class="card-grid three">
         <article class="card">
-          <h3>Les premiers seuils</h3>
+          <h2>Les premiers seuils</h2>
           <p>Les passages initiaux, quand le monde s’est ouvert et que quelque chose a commencé à répondre.</p>
         </article>
 
         <article class="card">
-          <h3>Les noms effacés</h3>
-          <p>Certains noms ne disparaissent pas. Ils se retirent. Et ils laissent derrière eux une faim étrange.</p>
+          <h2>Les noms effacés</h2>
+          <p>Des noms disparus qui laissent pourtant derrière eux une tension, comme une absence qui insiste.</p>
         </article>
 
         <article class="card">
-          <h3>Les Seigneurs du Fragment</h3>
-          <p>Au sommet de la chaîne de domination, des êtres dont la présence déforme tout autour d’eux.</p>
+          <h2>Les Seigneurs du Fragment</h2>
+          <p>Des puissances dont la seule présence déforme les territoires et infléchit les récits.</p>
         </article>
 
         <article class="card">
-          <h3>Les passages interdits</h3>
-          <p>Certains lieux n’ouvrent que dans des conditions précises. D’autres s’ouvrent quand ils le décident eux-mêmes.</p>
+          <h2>Les passages interdits</h2>
+          <p>Certains seuils n’ouvrent qu’à certaines heures. D’autres choisissent eux-mêmes qui traverse.</p>
         </article>
 
         <article class="card">
-          <h3>Les vestiges</h3>
-          <p>Objets, ruines, restes de présence et marques anciennes qui semblent encore agir sur le monde vivant.</p>
+          <h2>Les vestiges</h2>
+          <p>Objets, ruines et restes d’anciennes présences qui continuent à agir sur le monde vivant.</p>
         </article>
 
         <article class="card">
-          <h3>Les archives du Rivage</h3>
-          <p>Fragments de récits, traces de mémoire, textes partiels, transmissions brouillées et savoirs incomplets.</p>
+          <h2>Les archives du Rivage</h2>
+          <p>Fragments de récits, traces mémorielles, transmissions brouillées et savoirs incomplets.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container narrow">
-      <div class="panel">
-        <span class="tag">Lore</span>
-        <h2>Un monde en morceaux</h2>
-        <p>
-          Cette page sert de porte d’entrée vers les textes, les lois, les figures
-          et les mystères du Rivage. Tu pourras y ajouter ensuite des liens vers
-          des fragments détaillés, des pages internes ou des récits complets.
-        </p>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Lecture</p>
+        <h2>Par où commencer</h2>
+      </div>
+
+      <div class="card-grid two">
+        <article class="card">
+          <h3>Fragment gratuit</h3>
+          <p>
+            Commence par un extrait court pour entrer dans l’atmosphère du Rivage
+            et découvrir le ton du site.
+          </p>
+          <a class="text-link" href="assets/pdf/fragment-introduction.pdf" target="_blank" rel="noopener">Télécharger le PDF</a>
+        </article>
+
+        <article class="card">
+          <h3>Recueils premium</h3>
+          <p>
+            Pour aller plus loin, retrouve des lots de fragments, textes étendus,
+            archives annotées et documents complets dans la boutique.
+          </p>
+          <a class="text-link" href="boutique.html">Voir la boutique PDF</a>
+        </article>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p>© 2026 L’Autre Rivage — Franchissez le seuil du monde caché.</p>
+  <div class="container footer-grid">
+    <div>
+      <h2 class="footer-title">L’Autre Rivage</h2>
+      <p>Fragments, lore, PDF et jeu de rôle.</p>
+    </div>
+    <div>
+      <h3>Explorer</h3>
+      <ul class="footer-links">
+        <li><a href="bestiaire.html">Bestiaire</a></li>
+        <li><a href="cartes-du-rivage.html">Cartes</a></li>
+        <li><a href="chronologie.html">Chronologie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Suivre</h3>
+      <ul class="footer-links">
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 L’Autre Rivage</p>
   </div>
 </footer>
 

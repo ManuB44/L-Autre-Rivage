@@ -3,112 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bestiaire — L’Autre Rivage</title>
-  <meta name="description" content="Créatures, entités et formes oubliées de L’Autre Rivage.">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <title>Bestiaire du Rivage | Créatures, présences et entités</title>
+  <meta name="description" content="Découvrez les créatures, présences hostiles et entités majeures du Rivage.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://manub44.github.io/L-Autre-Rivage/bestiaire.html">
+  <meta property="og:title" content="Bestiaire du Rivage">
+  <meta property="og:description" content="Créatures, présences et entités du monde.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://manub44.github.io/L-Autre-Rivage/bestiaire.html">
+  <meta property="og:image" content="https://manub44.github.io/L-Autre-Rivage/assets/images/og-bestiaire.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container navbar">
     <a href="index.html" class="logo">L’Autre Rivage</a>
-
     <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-
     <nav id="site-nav" class="site-nav">
       <a href="index.html">Accueil</a>
       <a href="fragments.html">Fragments</a>
+      <a href="boutique.html">Boutique PDF</a>
       <a href="bestiaire.html" aria-current="page">Bestiaire</a>
       <a href="cartes-du-rivage.html">Cartes</a>
       <a href="chronologie.html">Chronologie</a>
-      <a href="pages/jdr/jeu-de-role.html">Jeu de rôle</a>
+      <a href="pages/jdr/jeu-de-role.html">JDR</a>
       <a href="a-propos.html">À propos</a>
-      <a href="newsletter.html">Newsletter</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="page-content">
+<main>
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Bestiaire</p>
       <h1>Créatures et présences</h1>
-      <p class="lead">
+      <p class="page-lead">
         Certaines formes chassent. D’autres observent. D’autres encore se contentent d’être là,
         comme si le monde leur appartenait depuis avant la mémoire.
       </p>
 
-      <div class="hero-actions">
-        <a href="assets/pdf/Bestiaire_Creatures_Ombres.pdf" class="btn btn-primary" target="_blank" rel="noopener">
-          Ouvrir le bestiaire complet (PDF)
-        </a>
+      <div class="page-actions">
+        <a class="btn btn-primary" href="boutique.html">Ouvrir le bestiaire complet</a>
+        <a class="btn btn-secondary" href="assets/pdf/apercu-bestiaire.pdf" target="_blank" rel="noopener">Télécharger l’aperçu gratuit</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="cards-grid">
+      <div class="card-grid three">
         <article class="card">
-          <h3>Errants</h3>
-          <p>Figures vagues, silhouettes en marche, trop humaines pour rassurer, trop absentes pour être vivantes.</p>
+          <h2>Errants</h2>
+          <p>Silhouettes en marche, trop humaines pour rassurer, trop absentes pour être vivantes.</p>
         </article>
 
         <article class="card">
-          <h3>Entités bannies</h3>
-          <p>Ce qui fut repoussé ne disparaît pas toujours. Parfois cela attend seulement un angle mort.</p>
+          <h2>Entités bannies</h2>
+          <p>Ce qui fut repoussé n’a pas disparu. Cela attend simplement un angle mort.</p>
         </article>
 
         <article class="card">
-          <h3>Formes premières</h3>
-          <p>Des organismes, des choses, des présences nées avant le langage clair du monde.</p>
+          <h2>Formes premières</h2>
+          <p>Des présences nées avant le langage clair du monde et avant la cartographie humaine.</p>
         </article>
 
         <article class="card">
-          <h3>Raclures</h3>
-          <p>Les plus basses formes hostiles du Rivage. Elles avancent en meute ou se traînent seules dans les zones mortes.</p>
+          <h2>Raclures</h2>
+          <p>Les formes hostiles les plus basses du Rivage, présentes dans les zones mortes et les marges.</p>
         </article>
 
         <article class="card">
-          <h3>Marcheurs</h3>
-          <p>Créatures plus stables, plus conscientes, souvent liées à une mission oubliée ou à une volonté qui ne veut pas mourir.</p>
+          <h2>Marcheurs</h2>
+          <p>Créatures plus stables, plus conscientes, liées à des missions oubliées ou à une volonté persistante.</p>
         </article>
 
         <article class="card">
-          <h3>Seigneurs et Entités</h3>
-          <p>Présences majeures, distorsions vivantes, puissances qui modifient le monde autour d’elles.</p>
+          <h2>Seigneurs et entités</h2>
+          <p>Présences majeures capables de modifier le monde autour d’elles par simple proximité.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container narrow">
-      <div class="panel">
-        <span class="tag">PDF</span>
-        <h2>Bestiaire complet</h2>
-        <p>
-          Le document complet contient les catégories de créatures, leurs niveaux de puissance,
-          leurs attaques, leur vitalité et leur rôle dans les affrontements du Rivage.
-        </p>
-        <p>
-          Place le fichier ici :
-          <strong>assets/pdf/Bestiaire_Creatures_Ombres.pdf</strong>
-        </p>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="card-grid two">
+        <article class="card">
+          <h3>Aperçu gratuit</h3>
+          <p>Une première sélection de créatures pour découvrir le ton, les catégories et la logique du bestiaire.</p>
+          <p class="product-meta">PDF • 6 pages</p>
+          <a class="btn btn-secondary btn-full" href="assets/pdf/apercu-bestiaire.pdf" target="_blank" rel="noopener">Télécharger</a>
+        </article>
+
+        <article class="card">
+          <h3>Bestiaire complet</h3>
+          <p>Version enrichie avec niveaux de menace, rôles, vitalité, attaques et usage narratif.</p>
+          <p class="product-meta">PDF • 32 pages</p>
+          <a class="btn btn-primary btn-full" href="boutique.html">Acheter le PDF</a>
+        </article>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p>© 2026 L’Autre Rivage — Franchissez le seuil du monde caché.</p>
+  <div class="container footer-grid">
+    <div>
+      <h2 class="footer-title">L’Autre Rivage</h2>
+      <p>Bestiaire, lore, cartes et documents à télécharger.</p>
+    </div>
+    <div>
+      <h3>Explorer</h3>
+      <ul class="footer-links">
+        <li><a href="fragments.html">Fragments</a></li>
+        <li><a href="cartes-du-rivage.html">Cartes</a></li>
+        <li><a href="chronologie.html">Chronologie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Suivre</h3>
+      <ul class="footer-links">
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 L’Autre Rivage</p>
   </div>
 </footer>
 
