@@ -362,4 +362,148 @@ section {
   main {
     padding-top: 42px;
   }
+
+  .card-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.card-link:hover,
+.card-link:focus {
+  color: #ffffff;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.offer-card {
+  padding: 28px 24px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.offer-card h3 {
+  margin: 16px 0 12px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.offer-card p {
+  margin: 0 0 16px;
+  color: var(--text-soft);
+  font-size: 0.96rem;
+}
+
+.offer-meta {
+  margin-bottom: 22px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.offer-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.offer-badge.free {
+  background: rgba(216, 181, 106, 0.18);
+  color: var(--gold-light);
+  border: 1px solid rgba(216, 181, 106, 0.35);
+}
+
+.offer-badge.premium {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.community-card {
+  padding: 34px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+}
+
+.community-text {
+  max-width: 760px;
+}
+
+.community-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 28px;
+}
+
+.footer-col h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 1.02rem;
+}
+
+.footer-col p {
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li + li {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: var(--text-soft);
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--gold-light);
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 22px 28px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 1100px) {
+  .offer-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 }
