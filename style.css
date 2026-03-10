@@ -93,7 +93,7 @@ img {
 
 .main-nav a {
   color: #d9e2ee;
-  font-size: 0.97rem;
+  font-size: 0.90rem;
   font-weight: 600;
 }
 
@@ -139,10 +139,10 @@ section {
 }
 
 .hero h1 {
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(4rem, 6vw, 5.7rem);
-  line-height: 1.03;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  line-height: 1.1;
   text-transform: uppercase;
   color: #f4f6fb;
   letter-spacing: -0.02em;
@@ -152,9 +152,7 @@ section {
 }
 
 .hero p {
-  margin: 0 0 32px;
-  max-width: 760px;
-  font-size: 1.18rem;
+  font-size: 1rem;
   color: var(--text-soft);
 }
 
@@ -174,7 +172,7 @@ section {
   padding: 0 28px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 1.03rem;
+  font-size: 0.90rem;
   border: 1px solid transparent;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -226,9 +224,7 @@ section {
 }
 
 .hero-card h2 {
-  margin: 0 0 22px;
-  font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(2.2rem, 3vw, 3.3rem);
+  font-size: clamp(1.6rem, 2vw, 2rem);
   line-height: 1.07;
   text-transform: uppercase;
   color: #f4f6fb;
@@ -242,7 +238,7 @@ section {
 .hero-card li {
   margin-bottom: 14px;
   color: var(--text-soft);
-  font-size: 1.04rem;
+  font-size: 0.95rem;
 }
 
 /* TITLES */
@@ -259,7 +255,7 @@ section {
 .section-title {
   margin: 0 0 14px;
   font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   line-height: 1.06;
   text-transform: uppercase;
   color: #f4f6fb;
@@ -269,7 +265,7 @@ section {
   margin: 0 0 30px;
   max-width: 900px;
   color: var(--text-soft);
-  font-size: 1.12rem;
+    font-size: 0.95rem;
 }
 
 /* GRID */
@@ -288,14 +284,14 @@ section {
 .feature-card h3 {
   margin: 0 0 14px;
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
 }
 
 .feature-card p {
   margin: 0;
   color: var(--text-soft);
-  font-size: 1rem;
+  font-size: 0.90rem;
 }
 
 /* FOOTER */
