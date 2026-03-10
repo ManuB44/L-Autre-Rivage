@@ -1,125 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | L’Autre Rivage</title>
-  <meta name="description" content="Contactez L’Autre Rivage pour parler du site, du lore, du bestiaire ou du jeu de rôle.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://manub44.github.io/L-Autre-Rivage/contact.html">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Contact — L’Autre Rivage</title>
+<meta name="description" content="Contactez le projet L’Autre Rivage pour toute question ou collaboration.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://manub44.github.io/L-Autre-Rivage/contact.html">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container navbar">
-    <a href="index.html" class="logo">L’Autre Rivage</a>
-    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav id="site-nav" class="site-nav">
-      <a href="index.html">Accueil</a>
-      <a href="fragments.html">Fragments</a>
-      <a href="boutique.html">Boutique PDF</a>
-      <a href="bestiaire.html">Bestiaire</a>
-      <a href="cartes-du-rivage.html">Cartes</a>
-      <a href="chronologie.html">Chronologie</a>
-      <a href="pages/jdr/jeu-de-role.html">JDR</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html" aria-current="page">Contact</a>
-    </nav>
-  </div>
-</header>
+<h1>Contact</h1>
 
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Contact</p>
-      <h1>Écrire au Rivage</h1>
-      <p class="page-lead">
-        Une question, une proposition ou un retour sur l’univers, le site ou le jeu de rôle ?
-        Cette page sert de point d’entrée direct.
-      </p>
-    </div>
-  </section>
+<p>
+Si vous souhaitez poser une question, proposer une collaboration ou partager vos impressions sur l’univers de L’Autre Rivage, vous pouvez utiliser le formulaire ci-dessous.
+</p>
 
-  <section class="section">
-    <div class="container card-grid two">
-      <article class="card">
-        <h2>Formulaire</h2>
-        <form class="form-box" data-demo-form>
-          <div class="form-row">
-            <label for="contact-name">Nom</label>
-            <input id="contact-name" name="name" type="text" required autocomplete="name">
-          </div>
+<form>
+<label>Nom</label><br>
+<input type="text" name="nom"><br><br>
 
-          <div class="form-row">
-            <label for="contact-email">Email</label>
-            <input id="contact-email" name="email" type="email" required autocomplete="email">
-          </div>
+<label>Email</label><br>
+<input type="email" name="email"><br><br>
 
-          <div class="form-row">
-            <label for="contact-subject">Sujet</label>
-            <input id="contact-subject" name="subject" type="text" required>
-          </div>
+<label>Message</label><br>
+<textarea name="message"></textarea><br><br>
 
-          <div class="form-row">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" required></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Envoyer</button>
-          <p class="form-message" aria-live="polite"></p>
-        </form>
-      </article>
-
-      <article class="card">
-        <h2>Avant d’écrire</h2>
-        <ul class="clean-list">
-          <li>Questions sur le site</li>
-          <li>Retour sur le lore</li>
-          <li>Demande liée au bestiaire</li>
-          <li>Échanges autour du jeu de rôle</li>
-          <li>Propositions de collaboration</li>
-        </ul>
-
-        <p class="inline-note">
-          Pour un vrai envoi, relie ce formulaire à Formspree, Basin ou Brevo. Sinon, remplace-le par un lien mail direct.
-        </p>
-      </article>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h2 class="footer-title">L’Autre Rivage</h2>
-      <p>Univers, fragments, PDF et jeu de rôle.</p>
-    </div>
-    <div>
-      <h3>Explorer</h3>
-      <ul class="footer-links">
-        <li><a href="fragments.html">Fragments</a></li>
-        <li><a href="bestiaire.html">Bestiaire</a></li>
-        <li><a href="pages/jdr/jeu-de-role.html">JDR</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Suivre</h3>
-      <ul class="footer-links">
-        <li><a href="newsletter.html">Newsletter</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <p>© 2026 L’Autre Rivage</p>
-  </div>
-</footer>
+<button type="submit">Envoyer</button>
+</form>
 
 </body>
 </html>
