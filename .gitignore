@@ -1,3 +1,79 @@
+# ======================
+# SYSTÈME
+# ======================
+
+.DS_Store
 Thumbs.db
-Desktop.ini
+desktop.ini
+
+# ======================
+# ÉDITEURS / IDE
+# ======================
+
 .vscode/
+.idea/
+*.code-workspace
+
+# ======================
+# FICHIERS TEMPORAIRES
+# ======================
+
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+
+# ======================
+# CACHE NAVIGATEUR
+# ======================
+
+.cache/
+dist/
+build/
+
+# ======================
+# NODE / OUTILS JS (si utilisés)
+# ======================
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ======================
+# FICHIERS OS / ZIP
+# ======================
+
+*.zip
+*.rar
+*.7z
+
+# ======================
+# SAUVEGARDES
+# ======================
+
+backup/
+backups/
+*.backup
+
+# ======================
+# EXPORTS LOCAUX
+# ======================
+
+export/
+exports/
+
+# ======================
+# FICHIERS SENSIBLES
+# ======================
+
+.env
+.env.local
+
+# ======================
+# DOSSIERS NON UTILISÉS POUR LE SITE
+# ======================
+
+tests/
+scripts/
+temp/

@@ -1,4 +1,4 @@
 git add .nojekyll
 git add assets/images/*
 git commit -m "Remplacement images Open Graph png vers jpg"
-git push
+git push origin main

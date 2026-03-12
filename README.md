@@ -1,31 +1,36 @@
-# L’Autre Rivage
+# 🌑 L’Autre Rivage
 
-Site narratif consacré à l’univers de **L’Autre Rivage**, un monde fragmenté entre archives, créatures, vestiges et exploration.
+**L’Autre Rivage** est un univers fantasy sombre accessible en ligne.  
+Le site rassemble un monde imaginaire composé de régions mystérieuses,
+de créatures anciennes, de fragments d’histoires et d’un jeu de rôle.
 
-Le site sert de portail vers le lore du monde et vers le **jeu de rôle L’Autre Rivage**.
-
----
-
-## Structure du site
-
-Pages principales :
-
-- index.html → accueil
-- fragments.html → fragments et textes du monde
-- bestiaire.html → créatures et entités
-- cartes-du-rivage.html → cartes et territoires
-- chronologie.html → grandes ruptures du monde
-- a-propos.html → présentation du projet
-- newsletter.html → inscription aux transmissions
-- contact.html → contact
-
-Section jeu de rôle :
-
-pages/jdr/
-- jeu-de-role.html
-- commencer.html
-- factions.html
+🔗 Site officiel  
+https://manub44.github.io/L-Autre-Rivage/
 
 ---
 
-## Arborescence
+# 🌍 Présentation
+
+L’Autre Rivage est un monde marqué par les ruines,
+les récits oubliés et les terres où la frontière
+entre histoire et légende reste floue.
+
+Forêts profondes, falaises battues par les vents,
+marais noyés de brume et cités anciennes composent
+un univers exploré à travers plusieurs sections.
+
+Le site propose :
+
+- un **univers fantasy original**
+- un **bestiaire de créatures**
+- des **cartes du monde**
+- des **fragments narratifs**
+- un **jeu de rôle basé dans cet univers**
+- une **bibliothèque de textes et de lore**
+
+---
+
+# 🗺 Sections du site
+
+## Univers
+Présentation globale du monde du Rivage.

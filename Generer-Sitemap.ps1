@@ -1,101 +1,68 @@
-$ErrorActionPreference = "Stop"
+# ==========================================
+# Script : Generer-Sitemap.ps1
+# Projet : L’Autre Rivage
+# Génère automatiquement sitemap.xml
+# ==========================================
 
-$root = Get-Location
+Write-Host ""
+Write-Host "==============================================="
+Write-Host "   GENERATION DU SITEMAP"
+Write-Host "==============================================="
+Write-Host ""
+
+# URL de base du site
 $baseUrl = "https://manub44.github.io/L-Autre-Rivage"
 
-Write-Host ""
-Write-Host "=== GENERATION AUTOMATIQUE DU SITEMAP ===" -ForegroundColor Cyan
-Write-Host "Racine : $root"
-Write-Host ""
+# Dossier racine du projet
+$root = Get-Location
 
-# Fichiers HTML à exclure
-$excludeFiles = @(
-    "404.html",
-    "googlec45ae584a8dc6a7f.html"
-)
+# Fichier de sortie
+$outputFile = Join-Path $root "sitemap.xml"
 
-# Récupération de tous les fichiers HTML
-$htmlFiles = Get-ChildItem -Path $root -Recurse -File -Filter "*.html" | Where-Object {
-    $excludeFiles -notcontains $_.Name
+# Récupérer tous les fichiers HTML
+$htmlFiles = Get-ChildItem -Path $root -Recurse -Filter *.html | Where-Object {
+    $_.Name -notin @("header.html", "footer.html")
 }
 
-# Tri par chemin
-$htmlFiles = $htmlFiles | Sort-Object FullName
-
-# Construction du XML
-$xml = @()
-$xml += '<?xml version="1.0" encoding="UTF-8"?>'
-$xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-
-# Ajout de l’accueil
-$xml += '  <url>'
-$xml += "    <loc>$baseUrl/</loc>"
-$xml += '    <changefreq>weekly</changefreq>'
-$xml += '    <priority>1.0</priority>'
-$xml += '  </url>'
+# Début du XML
+$xmlLines = @()
+$xmlLines += '<?xml version="1.0" encoding="UTF-8"?>'
+$xmlLines += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 
 foreach ($file in $htmlFiles) {
 
-    # On ignore index.html à la racine pour éviter le doublon avec /
-    if ($file.FullName -eq (Join-Path $root "index.html")) {
-        continue
+    # Chemin relatif depuis la racine
+    $relativePath = $file.FullName.Replace($root.Path, "").TrimStart("\")
+    
+    # Remplacer les \ Windows par /
+    $relativePath = $relativePath -replace "\\", "/"
+
+    # Cas spécial pour index.html à la racine
+    if ($relativePath -eq "index.html") {
+        $url = "$baseUrl/"
+    }
+    else {
+        $url = "$baseUrl/$relativePath"
     }
 
-    $relativePath = $file.FullName.Substring($root.Path.Length).TrimStart('\')
-    $relativePath = $relativePath -replace '\\', '/'
+    $xmlLines += "  <url>"
+    $xmlLines += "    <loc>$url</loc>"
+    $xmlLines += "  </url>"
 
-    $url = "$baseUrl/$relativePath"
-
-    # Valeurs par défaut
-    $changefreq = "yearly"
-    $priority = "0.6"
-
-    # Règles selon les sections
-    if ($relativePath -match '^univers/') {
-        $changefreq = "monthly"
-        $priority = "0.8"
-    }
-    elseif ($relativePath -match '^bestiaire/bestiaire-fantasy\.html$') {
-        $changefreq = "monthly"
-        $priority = "0.8"
-    }
-    elseif ($relativePath -match '^bestiaire/(creatures-fantasy|monstres-fantasy)\.html$') {
-        $changefreq = "monthly"
-        $priority = "0.7"
-    }
-    elseif ($relativePath -match '^cartes/cartes-du-rivage\.html$') {
-        $changefreq = "monthly"
-        $priority = "0.8"
-    }
-    elseif ($relativePath -match '^jdr/jeu-de-role\.html$') {
-        $changefreq = "monthly"
-        $priority = "0.8"
-    }
-    elseif ($relativePath -match '^jdr/(commencer|factions)\.html$') {
-        $changefreq = "monthly"
-        $priority = "0.7"
-    }
-    elseif ($relativePath -match '^lore/fragments\.html$') {
-        $changefreq = "monthly"
-        $priority = "0.7"
-    }
-    elseif ($relativePath -match '^communaute/') {
-        $changefreq = "yearly"
-        $priority = "0.5"
-    }
-
-    $xml += '  <url>'
-    $xml += "    <loc>$url</loc>"
-    $xml += "    <changefreq>$changefreq</changefreq>"
-    $xml += "    <priority>$priority</priority>"
-    $xml += '  </url>'
+    Write-Host "Ajoute : $url"
 }
 
-$xml += '</urlset>'
+# Fin du XML
+$xmlLines += '</urlset>'
 
-Set-Content -Path (Join-Path $root "sitemap.xml") -Value $xml -Encoding UTF8
+# Écriture du fichier
+$xmlLines | Set-Content -Path $outputFile -Encoding UTF8
 
 Write-Host ""
-Write-Host "sitemap.xml généré avec succès." -ForegroundColor Green
-Write-Host "Fichier créé : $(Join-Path $root 'sitemap.xml')"
+Write-Host "Sitemap genere : $outputFile"
+Write-Host "URL finale : $baseUrl/sitemap.xml"
+Write-Host ""
+Write-Host "==============================================="
+Write-Host "   GENERATION TERMINEE"
+Write-Host "==============================================="
 Write-Host ""

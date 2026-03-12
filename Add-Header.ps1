@@ -1,39 +1,40 @@
+# ==========================================
+# Script : Add-Header.ps1
+# Projet : L’Autre Rivage
+# Ajoute automatiquement header + footer
+# ==========================================
+
 $root = Get-Location
 
-$header = @"
-<header class="site-header">
-  <div class="nav-shell">
-    <a class="logo" href="/L-Autre-Rivage/index.html">L’Autre Rivage</a>
+$header = Get-Content "$root\header.html" -Raw
+$footer = Get-Content "$root\footer.html" -Raw
 
-    <button class="nav-toggle" type="button" aria-expanded="false">
-      Menu
-    </button>
+$files = Get-ChildItem -Recurse -Filter *.html
 
-    <nav class="site-nav">
-      <a href="/L-Autre-Rivage/index.html">Accueil</a>
-      <a href="/L-Autre-Rivage/univers/monde-fantasy.html">Univers</a>
-      <a href="/L-Autre-Rivage/cartes/cartes-du-rivage.html">Cartes</a>
-      <a href="/L-Autre-Rivage/bestiaire/bestiaire-fantasy.html">Bestiaire</a>
-      <a href="/L-Autre-Rivage/jdr/jeu-de-role.html">JDR</a>
-      <a href="/L-Autre-Rivage/lore/fragments.html">Fragments</a>
-      <a href="/L-Autre-Rivage/bibliotheque/bibliotheque.html">Bibliothèque</a>
-      <a href="/L-Autre-Rivage/communaute/a-propos.html">Communauté</a>
-    </nav>
-  </div>
-</header>
-"@
+foreach ($file in $files) {
 
-Get-ChildItem -Path $root -Recurse -Filter *.html | ForEach-Object {
+    if ($file.Name -eq "header.html") { continue }
+    if ($file.Name -eq "footer.html") { continue }
 
-    $file = $_.FullName
-    $content = Get-Content $file -Raw
+    $content = Get-Content $file.FullName -Raw
 
-    if ($content -notmatch "site-header") {
+    if ($content -match "<body>") {
 
-        $new = $content -replace "<body>", "<body>`n$header"
-        Set-Content $file $new
+        $content = $content -replace "<body>", "<body>`n$header"
 
-        Write-Host "Header ajouté dans :" $file
     }
 
+    if ($content -match "</body>") {
+
+        $content = $content -replace "</body>", "$footer`n</body>"
+
+    }
+
+    Set-Content $file.FullName $content
+
+    Write-Host "Header/Footer ajouté à $($file.Name)"
+
 }
+
+Write-Host ""
+Write-Host "✔ Script terminé"
