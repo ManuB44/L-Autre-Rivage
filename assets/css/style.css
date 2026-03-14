@@ -70,7 +70,7 @@ select {
 }
 
 .page-main {
-  padding: var(--page-padding-top) var(--page-padding-x) var(--page-padding-bottom);
+  padding: 0 var(--page-padding-x) var(--page-padding-bottom);
 }
 
 .section {
@@ -91,8 +91,8 @@ select {
   width: 100%;
   height: var(--header-height);
   z-index: 5000;
-  background: rgba(10, 6, 5, 0.92);
-  border-bottom: 1px solid rgba(199, 150, 69, 0.25);
+  background: rgba(10, 6, 5, 0.72);
+  border-bottom: 1px solid rgba(199, 150, 69, 0.18);
   backdrop-filter: blur(6px);
 }
 
@@ -235,7 +235,43 @@ select {
   transform: translateX(4px);
 }
 
-/* HERO ACCUEIL */
+/* HERO */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--section-gap);
+  padding: 56px 0 24px;
+}
+
+.page-hero-home {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  margin-top: calc(var(--header-height) * -1);
+  padding-top: var(--header-height);
+  background:
+    linear-gradient(to right, rgba(10, 6, 5, 0.85), rgba(10, 6, 5, 0.55) 40%, rgba(10, 6, 5, 0.85)),
+    url("../images/carte-rivage.jpg") center / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero-home .container {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.page-hero-home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #090505);
+}
 
 .hero-rivage {
   position: relative;
@@ -311,10 +347,6 @@ select {
 }
 
 /* PAGES INTERNES */
-
-.page-hero {
-  margin-bottom: var(--section-gap);
-}
 
 .breadcrumbs {
   margin: 0 0 16px;
@@ -440,27 +472,32 @@ select {
 
 .card-grid,
 .portes-grid,
-.library-grid {
+.library-grid,
+.page-grid {
   display: grid;
   gap: var(--grid-gap);
 }
 
-.card-grid-2 {
+.card-grid-2,
+.page-grid-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card-grid-3,
+.page-grid-3,
 .portes-grid,
 .library-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.card-grid-4 {
+.card-grid-4,
+.page-grid-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .porte,
-.library-card {
+.library-card,
+.content-card {
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
@@ -622,14 +659,31 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* CARTES DU RIVAGE */
+
+.featured-map {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.page-card {
+  text-align: center;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1280px) {
-  .card-grid-4 {
+  .card-grid-4,
+  .page-grid-4 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .card-grid-3,
+  .page-grid-3,
   .portes-grid,
   .library-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -698,6 +752,16 @@ button:focus-visible {
   }
 }
 
+@media (max-width: 900px) {
+  .card-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 860px) {
   :root {
     --page-padding-x: 16px;
@@ -720,6 +784,9 @@ button:focus-visible {
   .card-grid-2,
   .card-grid-3,
   .card-grid-4,
+  .page-grid-2,
+  .page-grid-3,
+  .page-grid-4,
   .portes-grid,
   .library-grid {
     grid-template-columns: 1fr;
@@ -755,6 +822,16 @@ button:focus-visible {
   .side-rail:hover .side-rail-panel,
   .side-rail:focus-within .side-rail-panel {
     display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-map {
+    margin: 20px auto;
+  }
+
+  .card-grid-3 {
+    grid-template-columns: 1fr;
   }
 }
 
