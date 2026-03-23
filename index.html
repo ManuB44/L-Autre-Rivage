@@ -3,1162 +3,363 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>L’Autre Rivage — Monde fantasy sombre, bestiaire, lore et jeu de rôle</title>
+
+  <title>L’Autre Rivage — Univers fantasy sombre, lore, bestiaire et JDR</title>
   <meta
     name="description"
-    content="Entrez dans L’Autre Rivage : un univers fantasy sombre entre faille, créatures, fragments narratifs et jeu de rôle. Découvrez le lore, le bestiaire et les PDF du JDR."
+    content="Explorez L’Autre Rivage : un monde fantasy sombre entre faille, bastions en ruine, bestiaire, lore et jeu de rôle."
   />
-  <meta
-    name="keywords"
-    content="L’Autre Rivage, fantasy sombre, jeu de rôle, JDR, bestiaire, lore, PDF, sentinelles, créatures, monde fantasy"
-  />
-  <meta name="theme-color" content="#0d0b0a" />
+  <meta name="theme-color" content="#0b1020" />
 
   <meta property="og:title" content="L’Autre Rivage" />
   <meta
     property="og:description"
-    content="Un monde brisé par la faille. Explorez le lore, les créatures et le jeu de rôle officiel."
+    content="Un monde brisé par la faille. Entrez dans le lore, le bestiaire et le jeu de rôle officiel."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/hero-rivage.jpg" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="assets/images/hero-rivage.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
-  <style>
-    :root {
-      --bg: #0d0b0a;
-      --bg-2: #15110f;
-      --panel: rgba(22, 18, 15, 0.82);
-      --panel-strong: rgba(26, 21, 18, 0.92);
-      --line: rgba(198, 168, 90, 0.18);
-      --line-strong: rgba(198, 168, 90, 0.42);
-      --text: #ece4d8;
-      --muted: #cbbca8;
-      --gold: #c6a85a;
-      --gold-soft: #e2c980;
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.38);
-      --radius: 20px;
-      --radius-sm: 14px;
-      --max: 1240px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, rgba(90, 73, 38, 0.14), transparent 34%),
-        linear-gradient(180deg, #0a0908 0%, #100d0c 35%, #0b0908 100%);
-      font-family: "Inter", sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), transparent 20%),
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.025), transparent 18%),
-        radial-gradient(circle at 80% 15%, rgba(198,168,90,0.05), transparent 18%);
-      mix-blend-mode: screen;
-      z-index: 0;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    .site-header-slot,
-    .site-footer-slot {
-      position: relative;
-      z-index: 5;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      isolation: isolate;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7, 6, 5, 0.38) 0%, rgba(7, 6, 5, 0.62) 45%, rgba(7, 6, 5, 0.92) 100%),
-        linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.34) 45%, rgba(0,0,0,0.68) 100%),
-        url("assets/images/hero-rivage.jpg") center/cover no-repeat;
-      z-index: -2;
-      transform: scale(1.03);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 240px;
-      background: linear-gradient(180deg, transparent, rgba(11, 9, 8, 0.98));
-      z-index: -1;
-    }
-
-    .mist {
-      position: absolute;
-      inset: auto -10% 0 -10%;
-      height: 42vh;
-      background:
-        radial-gradient(circle at 20% 40%, rgba(255,255,255,0.06), transparent 22%),
-        radial-gradient(circle at 55% 55%, rgba(255,255,255,0.05), transparent 18%),
-        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.04), transparent 20%);
-      filter: blur(24px);
-      opacity: 0.75;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 7rem 0 5rem;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 2rem;
-      align-items: end;
-    }
-
-    .hero-copy {
-      max-width: 760px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding: 0.5rem 0.9rem;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(14, 12, 11, 0.5);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold-soft);
-      backdrop-filter: blur(8px);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 0.45rem;
-      height: 0.45rem;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 16px rgba(198, 168, 90, 0.65);
-    }
-
-    h1, h2, h3, h4 {
-      margin: 0;
-      font-family: "Cinzel", serif;
-      line-height: 1.12;
-      letter-spacing: 0.01em;
-    }
-
-    h1 {
-      margin-top: 1.2rem;
-      font-size: clamp(2.8rem, 5vw, 5.4rem);
-      font-weight: 800;
-      max-width: 11ch;
-      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero-lead {
-      margin: 1.35rem 0 0;
-      max-width: 660px;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(1.25rem, 2vw, 1.7rem);
-      color: #f2e9dc;
-    }
-
-    .hero-text {
-      margin: 1.2rem 0 0;
-      max-width: 680px;
-      font-size: 1.02rem;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.95rem;
-    }
-
-    .btn {
-      appearance: none;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      min-height: 54px;
-      padding: 0 1.25rem;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.98rem;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #120f0a;
-      background: linear-gradient(180deg, #e1c77b 0%, #c6a85a 100%);
-      box-shadow: 0 12px 34px rgba(198, 168, 90, 0.22);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--line-strong);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 1rem;
-      align-self: center;
-    }
-
-    .hero-card {
-      padding: 1.2rem;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(24, 20, 17, 0.84), rgba(18, 15, 13, 0.9));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .hero-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.85rem;
-    }
-
-    .hero-stat {
-      padding: 1rem;
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-size: 1.4rem;
-      color: var(--gold-soft);
-      font-family: "Cinzel", serif;
-    }
-
-    .hero-stat span {
-      display: block;
-      margin-top: 0.2rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    main section {
-      padding: 5.5rem 0;
-      position: relative;
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 2rem;
-    }
-
-    .section-kicker {
-      color: var(--gold-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 0.7rem;
-      display: block;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      margin-bottom: 1rem;
-    }
-
-    .section-text {
-      margin: 0;
-      color: var(--muted);
-      max-width: 66ch;
-      font-size: 1rem;
-    }
-
-    .intro-grid,
-    .portals-grid,
-    .jdr-grid,
-    .pdf-grid,
-    .feature-grid,
-    .final-grid {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .intro-grid {
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: stretch;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(26, 21, 18, 0.78), rgba(15, 13, 11, 0.88));
-      border-radius: var(--radius);
-      padding: 1.45rem;
-      box-shadow: var(--shadow);
-    }
-
-    .panel h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .panel p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 0.85rem;
-      margin-top: 1rem;
-    }
-
-    .mini-item {
-      padding: 0.9rem 1rem;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.04);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .mini-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-      font-size: 0.96rem;
-    }
-
-    .mini-item span {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .portals-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .portal-card,
-    .pdf-card,
-    .feature-card {
-      position: relative;
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(25, 21, 18, 0.78), rgba(13, 11, 10, 0.92));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .portal-card::before,
-    .pdf-card::before,
-    .feature-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.9;
-    }
-
-    .portal-card .tag,
-    .pdf-card .tag {
-      display: inline-block;
-      margin-bottom: 0.9rem;
-      color: var(--gold-soft);
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .portal-card h3,
-    .pdf-card h3,
-    .feature-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .portal-card p,
-    .pdf-card p,
-    .feature-card p {
-      margin: 0 0 1rem;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      color: var(--gold-soft);
-      font-weight: 700;
-      font-size: 0.94rem;
-    }
-
-    .jdr-section {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
-
-    .jdr-shell {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(15, 12, 10, 0.68), rgba(10, 9, 8, 0.94)),
-        url("assets/images/jdr-hero.jpg") center/cover no-repeat;
-      box-shadow: var(--shadow);
-    }
-
-    .jdr-shell::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(198, 168, 90, 0.14), transparent 24%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05), transparent 18%);
-      pointer-events: none;
-    }
-
-    .jdr-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-    }
-
-    .jdr-main h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 1rem;
-    }
-
-    .jdr-main p {
-      max-width: 60ch;
-      color: #e0d1be;
-      margin-bottom: 1rem;
-    }
-
-    .jdr-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin: 1.5rem 0;
-    }
-
-    .badge {
-      padding: 0.55rem 0.9rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #f0e4d2;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .jdr-panel {
-      padding: 1.2rem;
-      border-radius: 20px;
-      background: rgba(15, 13, 11, 0.76);
-      border: 1px solid rgba(198,168,90,0.16);
-      backdrop-filter: blur(6px);
-    }
-
-    .jdr-panel + .jdr-panel {
-      margin-top: 1rem;
-    }
-
-    .jdr-panel ul {
-      margin: 0.8rem 0 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-
-    .jdr-panel li + li {
-      margin-top: 0.5rem;
-    }
-
-    .pdf-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .price-line {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .price {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .price strong {
-      font-family: "Cinzel", serif;
-      font-size: 1.5rem;
-      color: var(--gold-soft);
-    }
-
-    .price span {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .pdf-note {
-      margin-top: 1.75rem;
-      color: var(--muted);
-      font-size: 0.98rem;
-      max-width: 62ch;
-    }
-
-    .feature-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .feature-card {
-      min-height: 100%;
-    }
-
-    .quote-band {
-      text-align: center;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-    }
-
-    .quote-band blockquote {
-      margin: 0 auto;
-      max-width: 900px;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(1.6rem, 3vw, 2.5rem);
-      color: #f1e6d7;
-      line-height: 1.35;
-    }
-
-    .quote-band p {
-      margin: 1rem 0 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .final-shell {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(12,10,9,0.82), rgba(15,12,10,0.95)),
-        url("assets/images/finale-rivage.jpg") center/cover no-repeat;
-      box-shadow: var(--shadow);
-    }
-
-    .final-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .final-copy p {
-      color: var(--muted);
-      max-width: 56ch;
-    }
-
-    .final-box {
-      padding: 1.4rem;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .final-box h3 {
-      margin-bottom: 0.8rem;
-    }
-
-    .final-box ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-
-    .final-box li + li {
-      margin-top: 0.5rem;
-    }
-
-    .section-actions {
-      margin-top: 1.4rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .anchor-offset {
-      scroll-margin-top: 90px;
-    }
-
-    .footer-note {
-      padding: 2rem 0 4rem;
-      text-align: center;
-      color: #a8967c;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 1080px) {
-      .hero-inner,
-      .intro-grid,
-      .jdr-grid,
-      .final-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .portals-grid,
-      .pdf-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-side {
-        max-width: 760px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container,
-      .hero-inner {
-        width: min(var(--max), calc(100% - 1.2rem));
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-inner {
-        padding: 6rem 0 4rem;
-      }
-
-      h1 {
-        max-width: 100%;
-      }
-
-      .portals-grid,
-      .pdf-grid,
-      .feature-grid,
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .jdr-grid,
-      .final-grid {
-        padding: 1.25rem;
-      }
-
-      .hero-actions,
-      .section-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
   <div class="page">
-    <div id="site-header" class="site-header-slot"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">✦</span>
+          <span class="brand-text">L’Autre Rivage</span>
+        </a>
 
-    <header class="hero">
-      <div class="mist" aria-hidden="true"></div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
 
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow">Fantasy sombre • Lore • Bestiaire • Jeu de rôle</span>
+        <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+          <a href="univers/">Univers</a>
+          <a href="cartes/">Cartes</a>
+          <a href="bestiaire/">Bestiaire</a>
+          <a href="jdr/">JDR</a>
+          <a href="bibliotheque/">Archives</a>
+          <a href="communaute/">Communauté</a>
+        </nav>
 
-          <h1>L’Autre Rivage</h1>
-
-          <p class="hero-lead">
-            Le Rivage n’est pas un monde. C’est ce qu’il reste… après la chute.
-          </p>
-
-          <p class="hero-text">
-            Une faille s’est ouverte. Les terres se sont brisées. Les créatures ont changé.
-            Dans les bastions, dans les forêts noires, dans les falaises et les brumes, les
-            Sentinelles tiennent encore. Entre fragments narratifs, bestiaire et jeu de rôle,
-            le Rivage s’explore comme un monde vivant — et chaque PDF ouvre une nouvelle porte.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#entrer">Entrer dans le Rivage</a>
-            <a class="btn btn-secondary" href="#pdf-jdr">Voir les PDF du JDR</a>
-          </div>
+        <div class="nav-actions">
+          <a href="communaute/" class="nav-link">Discord</a>
+          <a href="bibliotheque/" class="nav-link nav-link-strong">Archives PDF</a>
         </div>
-
-        <aside class="hero-side">
-          <div class="hero-card">
-            <h3>Le cœur du site</h3>
-            <p>
-              Découvrir le monde, affronter les créatures, puis jouer immédiatement avec le
-              jeu de rôle officiel et ses extensions en PDF.
-            </p>
-          </div>
-
-          <div class="hero-card">
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <strong>Lore</strong>
-                <span>Fragments, régions, chronologie, ambiance</span>
-              </div>
-              <div class="hero-stat">
-                <strong>Bestiaire</strong>
-                <span>Créatures, boss, zones et menaces du Rivage</span>
-              </div>
-              <div class="hero-stat">
-                <strong>JDR</strong>
-                <span>Règles simples, D6, exploration, craft</span>
-              </div>
-              <div class="hero-stat">
-                <strong>PDF</strong>
-                <span>Livres prêts à lire, jouer et collectionner</span>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </header>
 
     <main>
-      <section id="entrer" class="anchor-offset">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-kicker">Entrer</span>
-            <h2 class="section-title">Le monde s’efface lentement</h2>
-            <p class="section-text">
-              Une faille s’est ouverte au-dessus du Rivage. Les bastions se vident, les ruines
-              murmurent encore, les bêtes mutent, et les terres anciennes ne répondent plus aux
-              anciennes lois. Ceux qui avancent dans ces régions ne cherchent pas seulement des
-              réponses. Ils cherchent à survivre assez longtemps pour comprendre.
-            </p>
-          </div>
+     <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-          <div class="intro-grid">
-            <article class="panel">
-              <h3>Ce que tu trouves ici</h3>
-              <p>
-                L’Autre Rivage est conçu comme une expérience complète : un univers à lire, un
-                bestiaire à explorer, et un jeu de rôle à jouer. Le site doit d’abord faire
-                ressentir le monde, puis donner envie d’y entrer, puis proposer les livres PDF
-                qui prolongent réellement l’aventure.
-              </p>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Fantasy sombre • Lore • Bestiaire • Jeu de rôle</p>
 
-              <div class="mini-list">
-                <div class="mini-item">
-                  <strong>Lire</strong>
-                  <span>Découvrir les fragments, les régions, les tensions et les mystères du Rivage.</span>
-                </div>
-                <div class="mini-item">
-                  <strong>Explorer</strong>
-                  <span>Rencontrer les créatures, les boss et les zones qui donnent sa vraie matière au monde.</span>
-                </div>
-                <div class="mini-item">
-                  <strong>Jouer</strong>
-                  <span>Passer du lore au jeu avec les règles, les scénarios et les PDF du JDR officiel.</span>
-                </div>
-              </div>
-            </article>
+      <h1>Entrez dans le Rivage brisé</h1>
 
-            <aside class="panel">
-              <h3>La promesse du Rivage</h3>
-              <p>
-                Ce site ne présente pas seulement un univers. Il ouvre une progression :
-                entrer, comprendre, combattre, puis posséder les livres qui permettent d’aller plus loin.
-              </p>
+      <p class="hero-lead">
+        La faille s’est ouverte. Les terres ont cédé. Les Sentinelles tiennent encore.
+      </p>
 
-              <div class="section-actions">
-                <a class="btn btn-secondary" href="/lore/">Découvrir le monde</a>
-                <a class="btn btn-secondary" href="/bestiaire/">Voir les créatures</a>
-                <a class="btn btn-primary" href="/jdr/">Commencer à jouer</a>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
+      <p class="hero-text">
+        Explorez un monde ravagé par les brumes, les créatures et les ruines anciennes.
+        Découvrez le lore, le bestiaire, les règles du JDR et les archives officielles
+        de L’Autre Rivage.
+      </p>
 
-      <section>
-        <div class="container">
-          <div class="section-header">
-            <span class="section-kicker">Les trois portes</span>
-            <h2 class="section-title">Trois façons d’entrer dans L’Autre Rivage</h2>
-            <p class="section-text">
-              Le site doit guider sans noyer. Chaque porte répond à une envie différente, mais toutes
-              ramènent au même centre : le JDR et ses livres PDF.
-            </p>
-          </div>
-
-          <div class="portals-grid">
-            <article class="portal-card">
-              <span class="tag">Portail I</span>
-              <h3>Lire les fragments</h3>
-              <p>
-                Entre dans le Rivage par le récit. Explore les tensions, les traces de la faille,
-                les ruines, les peuples et les zones qui façonnent le monde.
-              </p>
-              <div class="card-footer">
-                <span>Commencer par l’univers</span>
-                <a href="/lore/">Ouvrir →</a>
-              </div>
-            </article>
-
-            <article class="portal-card">
-              <span class="tag">Portail II</span>
-              <h3>Affronter le bestiaire</h3>
-              <p>
-                Découvre les bêtes, les esprits, les constructions et les boss qui hantent
-                les bastions, les bois noirs, les falaises et la mer intérieure.
-              </p>
-              <div class="card-footer">
-                <span>Voir les menaces</span>
-                <a href="/bestiaire/">Explorer →</a>
-              </div>
-            </article>
-
-            <article class="portal-card">
-              <span class="tag">Portail III</span>
-              <h3>Devenir Sentinelle</h3>
-              <p>
-                Passe immédiatement au jeu. Le système du Rivage repose sur des D6, l’exploration,
-                le combat, le loot, le craft et la progression des Sentinelles.
-              </p>
-              <div class="card-footer">
-                <span>Jouer maintenant</span>
-                <a href="/jdr/">Entrer →</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="jdr-section anchor-offset" id="jdr-centre">
-        <div class="container">
-          <div class="jdr-shell">
-            <div class="jdr-grid">
-              <div class="jdr-main">
-                <span class="section-kicker">Le cœur du site</span>
-                <h2>Le jeu de rôle officiel du Rivage</h2>
-                <p>
-                  Ici, le lore devient une aventure jouable. Les joueurs incarnent des Sentinelles
-                  envoyées dans les terres sauvages pour explorer, combattre, récupérer des ressources,
-                  fabriquer de l’équipement et accomplir des missions.
-                </p>
-                <p>
-                  Le système repose sur des D6, avec une boucle claire : exploration, combat,
-                  loot, craft, progression. Il a été pensé pour être simple, rapide, tactique
-                  et accessible aux MJ débutants.
-                </p>
-
-                <div class="jdr-badges">
-                  <span class="badge">D6 simple</span>
-                  <span class="badge">Exploration</span>
-                  <span class="badge">Bestiaire large</span>
-                  <span class="badge">Craft & métiers</span>
-                  <span class="badge">Campagne longue</span>
-                </div>
-
-                <div class="section-actions">
-                  <a class="btn btn-primary" href="/jdr/commencer.html">Commencer l’aventure</a>
-                  <a class="btn btn-secondary" href="/jdr/">Voir le JDR</a>
-                  <a class="btn btn-secondary" href="#pdf-jdr">Accéder aux livres PDF</a>
-                </div>
-              </div>
-
-              <aside>
-                <div class="jdr-panel">
-                  <h3>Pourquoi jouer ici ?</h3>
-                  <ul>
-                    <li>Un monde déjà posé, avec régions, créatures et ambiance forte.</li>
-                    <li>Une mécanique claire qui transforme rapidement le lore en partie jouable.</li>
-                    <li>Des PDF pensés pour prolonger l’expérience au-delà du site.</li>
-                  </ul>
-                </div>
-
-                <div class="jdr-panel">
-                  <h3>Ce que proposent les livres</h3>
-                  <ul>
-                    <li>Règles plus complètes et plus confortables à consulter en jeu.</li>
-                    <li>Bestiaires, scénarios, archives, extensions et contenus prêts à jouer.</li>
-                    <li>Une vraie collection du Rivage, utile pour lire autant que pour jouer.</li>
-                  </ul>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="pdf-jdr" class="anchor-offset">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-kicker">Archives du Rivage</span>
-            <h2 class="section-title">Les PDF à lire, jouer et collectionner</h2>
-            <p class="section-text">
-              La vente ne doit pas apparaître comme un bloc séparé. Elle doit prolonger l’immersion.
-              Ici, chaque livre est présenté comme une archive du monde : utile pour jouer, agréable à lire,
-              et désirable en tant qu’objet.
-            </p>
-          </div>
-
-          <div class="pdf-grid">
-            <article class="pdf-card">
-              <span class="tag">Entrée</span>
-              <h3>Livre d’initiation</h3>
-              <p>
-                L’entrée idéale dans le Rivage. Règles essentielles, ambiance, mise en route rapide
-                et première porte vers les terres brisées.
-              </p>
-              <div class="price-line">
-                <div class="price">
-                  <strong>PDF</strong>
-                  <span>Découvrir / commencer</span>
-                </div>
-                <a class="btn btn-primary" href="/boutique/">Voir le livre</a>
-              </div>
-            </article>
-
-            <article class="pdf-card">
-              <span class="tag">Monde</span>
-              <h3>Bestiaire du Rivage</h3>
-              <p>
-                Créatures, boss, menaces et présences anciennes. Un livre pensé pour enrichir les parties,
-                nourrir le MJ et donner une vraie densité au monde.
-              </p>
-              <div class="price-line">
-                <div class="price">
-                  <strong>Bestiaire</strong>
-                  <span>Pour jouer et explorer</span>
-                </div>
-                <a class="btn btn-primary" href="/boutique/">Accéder</a>
-              </div>
-            </article>
-
-            <article class="pdf-card">
-              <span class="tag">Extension</span>
-              <h3>Archives & extensions</h3>
-              <p>
-                Fragments, régions, scénarios, contenus premium et futurs livres du Rivage.
-                Chaque PDF ouvre une zone, une menace ou une nouvelle façon de jouer.
-              </p>
-              <div class="price-line">
-                <div class="price">
-                  <strong>Collection</strong>
-                  <span>Approfondir le Rivage</span>
-                </div>
-                <a class="btn btn-primary" href="/boutique/">Explorer</a>
-              </div>
-            </article>
-          </div>
-
-          <p class="pdf-note">
-            Chaque achat ne vend pas seulement un fichier. Il débloque une nouvelle profondeur :
-            plus de jeu, plus de matière, plus d’atmosphère. Le site donne l’envie d’entrer,
-            les PDF donnent les moyens d’y rester.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-header">
-            <span class="section-kicker">Pourquoi rester</span>
-            <h2 class="section-title">Un monde pensé pour durer</h2>
-            <p class="section-text">
-              Le Rivage ne repose pas sur une simple vitrine. Il tient parce que ses couches se répondent :
-              monde, menaces, jeu, ressources, progression et livres.
-            </p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Un lore vivant</h3>
-              <p>
-                Fragments narratifs, régions fortes, bastions, brumes, failles et terres anciennes
-                donnent une vraie épaisseur au site.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Des créatures mémorables</h3>
-              <p>
-                Le bestiaire donne des visages au danger et transforme immédiatement l’univers en expérience concrète.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Un JDR jouable</h3>
-              <p>
-                Le système simple permet de passer vite à la table, sans perdre l’atmosphère du monde.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Des PDF désirables</h3>
-              <p>
-                Les livres servent autant à jouer qu’à posséder une part du Rivage. C’est là que se fait la conversion.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="quote-band">
-        <div class="container">
-          <blockquote>
-            Certains entrent dans le Rivage pour comprendre. D’autres pour survivre.
-            Les plus rares y entrent pour ne plus jamais en sortir.
-          </blockquote>
-          <p>
-            Lire le monde. Voir les menaces. Jouer les Sentinelles. Puis ouvrir les archives.
-          </p>
-        </div>
-      </section>
-
-      <section class="anchor-offset" id="fin">
-        <div class="container">
-          <div class="final-shell">
-            <div class="final-grid">
-              <div class="final-copy">
-                <span class="section-kicker">Dernière porte</span>
-                <h2 class="section-title">Devenir Sentinelle</h2>
-                <p>
-                  Tout doit converger ici. Après l’immersion, après les fragments, après le bestiaire,
-                  l’utilisateur doit sentir qu’il peut franchir un seuil réel : jouer, lire davantage,
-                  ou acheter les PDF qui étendent le Rivage.
-                </p>
-
-                <div class="section-actions">
-                  <a class="btn btn-primary" href="/jdr/commencer.html">Commencer l’aventure</a>
-                  <a class="btn btn-secondary" href="/boutique/">Ouvrir les archives PDF</a>
-                  <a class="btn btn-secondary" href="/bestiaire/">Affronter les créatures</a>
-                </div>
-              </div>
-
-              <aside class="final-box">
-                <h3>Chemin idéal</h3>
-                <ul>
-                  <li>Entrer par l’accueil et comprendre immédiatement l’identité du Rivage.</li>
-                  <li>Découvrir une porte : lore, bestiaire ou jeu.</li>
-                  <li>Revenir naturellement vers le JDR.</li>
-                  <li>Trouver les PDF comme prolongement logique et non comme simple boutique.</li>
-                </ul>
-              </aside>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="container">
-        <div class="footer-note">
-          L’Autre Rivage — monde fantasy sombre, bestiaire, lore et jeu de rôle.
-        </div>
+      <div class="hero-actions">
+        <a href="#commencer" class="btn btn-primary">Entrer dans le Rivage</a>
+        <a href="bibliotheque/" class="btn btn-secondary">Voir les archives</a>
       </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <img
+          src="assets/images/joueurs-jdr-rivage.jpg"
+          alt="Des joueurs autour d’une table en train de jouer à L’Autre Rivage"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="systems-strip">
+        <div class="container">
+          <h2 class="strip-title">LES TERRES DU RIVAGE</h2>
+
+          <div class="systems-list">
+            <span>Bastion des Sentinelles</span>
+            <span>Bois Noir</span>
+            <span>Vallée des Échos</span>
+            <span>Falaises du Monde Brisé</span>
+            <span>Mer Intérieure</span>
+            <span>Terres des Bêtes Anciennes</span>
+            <span>Archipel des Brumes</span>
+            <span>Et bien d’autres…</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section">
+        <div class="container">
+          <h2 class="section-title center">BLINDÉ DE CONTENU</h2>
+
+          <div class="feature-showcase">
+            <div class="feature-tabs">
+              <button class="feature-tab active" data-feature="0">Lore</button>
+              <button class="feature-tab" data-feature="1">Bestiaire</button>
+              <button class="feature-tab" data-feature="2">JDR</button>
+              <button class="feature-tab" data-feature="3">Loot & Craft</button>
+              <button class="feature-tab" data-feature="4">Cartes</button>
+              <button class="feature-tab" data-feature="5">Archives PDF</button>
+            </div>
+
+            <div class="feature-stage">
+              <article class="feature-panel active" data-panel="0">
+                <div class="feature-media">
+                  <img src="assets/images/hero-rivage.jpg" alt="Lore de L’Autre Rivage" />
+                </div>
+                <div class="feature-content">
+                  <h3>Un univers sombre et cohérent</h3>
+                  <p>
+                    Fragments narratifs, régions maudites, serments anciens, bastions brisés
+                    et menace de la faille : le Rivage est pensé comme un monde vivant.
+                  </p>
+                </div>
+              </article>
+
+              <article class="feature-panel" data-panel="1">
+                <div class="feature-media">
+                  <img src="assets/images/bestiaire-rivage.jpg" alt="Bestiaire du Rivage" />
+                </div>
+                <div class="feature-content">
+                  <h3>Des créatures partout</h3>
+                  <p>
+                    Spectres, araignées, colosses, dragons, bêtes anciennes et gardiens oubliés
+                    peuplent chaque région du Rivage.
+                  </p>
+                </div>
+              </article>
+
+              <article class="feature-panel" data-panel="2">
+                    <div class="feature-media">
+                      <img
+                        src="assets/images/des-interface-rivage.jpg"
+                        alt="Interface de lancer de dés du jeu de rôle L’Autre Rivage"
+                      />
+                    </div>
+                    <div class="feature-content">
+                      <h3>Le système de dés du Rivage</h3>
+                      <p>
+                        Lancez les dés rapidement avec une interface claire, lisible et pensée pour le jeu.
+                        Jets simples, actions, résultats visibles, rythme rapide :
+                        le système doit donner envie de jouer immédiatement.
+                      </p>
+                    </div>
+              </article>
+
+              <article class="feature-panel" data-panel="3">
+                <div class="feature-media">
+                  <img src="assets/images/craft-rivage.jpg" alt="Loot et craft du Rivage" />
+                </div>
+                <div class="feature-content">
+                  <h3>Loot, métiers et craft</h3>
+                  <p>
+                    Récupérez des ressources sur les créatures, vendez-les, transformez-les
+                    ou fabriquez armes, armures, potions, runes et objets rares.
+                  </p>
+                </div>
+              </article>
+
+              <article class="feature-panel" data-panel="4">
+                <div class="feature-media">
+                  <img src="assets/images/map-rivage.jpg" alt="Carte de L’Autre Rivage" />
+                </div>
+                <div class="feature-content">
+                  <h3>Un monde à explorer</h3>
+                  <p>
+                    Parcourez les cartes, repérez les régions majeures et préparez vos expéditions
+                    dans les zones les plus dangereuses du Rivage.
+                  </p>
+                </div>
+              </article>
+
+              <article class="feature-panel" data-panel="5">
+                <div class="feature-media">
+                  <img src="assets/images/finale-rivage.jpg" alt="Archives PDF du Rivage" />
+                </div>
+                <div class="feature-content">
+                  <h3>Des archives prêtes à lire et jouer</h3>
+                  <p>
+                    Livres d’initiation, bestiaires, extensions, règles, scénarios et documents
+                    du monde prolongent naturellement l’expérience.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="first-steps" id="commencer">
+        <div class="container">
+          <h2 class="section-title">PREMIERS PAS</h2>
+
+          <div class="steps-box">
+            <details open>
+              <summary>ENTRER DANS LE MONDE</summary>
+              <div class="details-content">
+                Commencez par les fragments du lore, les régions et les grandes menaces
+                pour comprendre l’identité du Rivage.
+                <a href="lore/">Ouvrir le lore</a>
+              </div>
+            </details>
+
+            <details>
+              <summary>DÉCOUVRIR LES CRÉATURES</summary>
+              <div class="details-content">
+                Parcourez le bestiaire pour voir les monstres, boss, esprits et prédateurs
+                qui hantent les terres du Rivage.
+                <a href="bestiaire/">Voir le bestiaire</a>
+              </div>
+            </details>
+
+            <details>
+              <summary>COMMENCER COMME MJ OU JOUEUR</summary>
+              <div class="details-content">
+                Prenez les règles, choisissez une voie, une mission ou une région,
+                puis lancez votre première partie.
+                <a href="jdr/">Aller au JDR</a>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="news-section">
+        <div class="container">
+          <h2 class="section-title">LES PORTES DU RIVAGE</h2>
+
+          <div class="news-grid">
+            <article class="news-card">
+              <a href="univers/">
+                <img src="assets/images/hero-rivage.jpg" alt="Univers de L’Autre Rivage" />
+                <h3>Univers, fragments et histoire</h3>
+              </a>
+            </article>
+
+            <article class="news-card">
+              <a href="bestiaire/">
+                <img src="assets/images/bestiaire-rivage.jpg" alt="Bestiaire du Rivage" />
+                <h3>Bestiaire, créatures et boss</h3>
+              </a>
+            </article>
+
+            <article class="news-card">
+              <a href="jdr/">
+                <img src="assets/images/jdr-hero.jpg" alt="Jeu de rôle de L’Autre Rivage" />
+                <h3>Règles, progression et aventures</h3>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="container">
+          <h2 class="section-title center">CONTINUEZ L’EXPLORATION DU RIVAGE</h2>
+
+          <div class="mobile-frame">
+            <img src="assets/images/finale-rivage.jpg" alt="Visuel immersif de L’Autre Rivage" />
+          </div>
+
+          <div class="mobile-points">
+            <div>
+              <strong>Un monde toujours à portée</strong>
+              <span>Fragments, régions et créatures accessibles à tout moment.</span>
+            </div>
+            <div>
+              <strong>Une base claire pour jouer</strong>
+              <span>Règles, loot, craft, métiers et progression centralisés.</span>
+            </div>
+            <div>
+              <strong>Des archives prêtes à ouvrir</strong>
+              <span>Bestiaires, scénarios, extensions et PDF du Rivage.</span>
+            </div>
+          </div>
+
+          <div class="mobile-cta">
+            <a href="bibliotheque/" class="btn btn-primary">OUVRIR LES ARCHIVES</a>
+          </div>
+
+          <p class="help-links">
+            Besoin d’aide ?
+            <a href="communaute/">Rejoindre la communauté</a>
+            <span>•</span>
+            <a href="jdr/">Parcourir le JDR</a>
+          </p>
+        </div>
+      </section>
     </main>
 
-    <div id="site-footer" class="site-footer-slot"></div>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3 class="footer-title">L’Autre Rivage</h3>
+          <p class="footer-text">
+            Monde fantasy sombre, bestiaire, lore et jeu de rôle.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navigation pied de page">
+          <a href="univers/">Univers</a>
+          <a href="bestiaire/">Bestiaire</a>
+          <a href="jdr/">JDR</a>
+          <a href="bibliotheque/">Archives</a>
+          <a href="communaute/">Communauté</a>
+        </nav>
+      </div>
+    </footer>
   </div>
 
   <script>
-    async function injectPartial(targetId, filePath) {
-      const target = document.getElementById(targetId);
-      if (!target) return;
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.querySelector(".site-nav");
 
-      try {
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error("Impossible de charger " + filePath);
-        target.innerHTML = await response.text();
-      } catch (error) {
-        console.warn(error);
-      }
+    if (navToggle && siteNav) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
     }
 
-    injectPartial("site-header", "/assets/includes/header.html");
-    injectPartial("site-footer", "/assets/includes/footer.html");
-  </script>
+    const tabs = document.querySelectorAll(".feature-tab");
+    const panels = document.querySelectorAll(".feature-panel");
 
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.feature;
+
+        tabs.forEach((t) => t.classList.remove("active"));
+        panels.forEach((p) => p.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.querySelector(`.feature-panel[data-panel="${target}"]`)?.classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
