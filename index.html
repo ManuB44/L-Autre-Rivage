@@ -33,12 +33,18 @@
   <div class="page">
     <header class="site-header">
       <div class="container nav-shell">
-        <a href="index.html" class="brand">
+        <a href="index.html" class="brand" aria-label="Retour à l’accueil de L’Autre Rivage">
           <span class="brand-mark">✦</span>
           <span class="brand-text">L’Autre Rivage</span>
         </a>
 
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Ouvrir le menu"
+        >
           Menu
         </button>
 
@@ -59,44 +65,44 @@
     </header>
 
     <main>
-     <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Fantasy sombre • Lore • Bestiaire • Jeu de rôle</p>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Fantasy sombre • Lore • Bestiaire • Jeu de rôle</p>
 
-      <h1>Entrez dans le Rivage brisé</h1>
+            <h1>Entrez dans le Rivage brisé</h1>
 
-      <p class="hero-lead">
-        La faille s’est ouverte. Les terres ont cédé. Les Sentinelles tiennent encore.
-      </p>
+            <p class="hero-lead">
+              La faille s’est ouverte. Les terres ont cédé. Les Sentinelles tiennent encore.
+            </p>
 
-      <p class="hero-text">
-        Explorez un monde ravagé par les brumes, les créatures et les ruines anciennes.
-        Découvrez le lore, le bestiaire, les règles du JDR et les archives officielles
-        de L’Autre Rivage.
-      </p>
+            <p class="hero-text">
+              Explorez un monde ravagé par les brumes, les créatures et les ruines anciennes.
+              Découvrez le lore, le bestiaire, les règles du JDR et les archives officielles
+              de L’Autre Rivage.
+            </p>
 
-      <div class="hero-actions">
-        <a href="#commencer" class="btn btn-primary">Entrer dans le Rivage</a>
-        <a href="bibliotheque/" class="btn btn-secondary">Voir les archives</a>
-      </div>
-    </div>
+            <div class="hero-actions">
+              <a href="#commencer" class="btn btn-primary">Entrer dans le Rivage</a>
+              <a href="bibliotheque/" class="btn btn-secondary">Voir les archives</a>
+            </div>
+          </div>
 
-    <div class="hero-visual">
-      <div class="hero-frame">
-        <img
-          src="assets/images/joueurs-jdr-rivage.jpg"
-          alt="Des joueurs autour d’une table en train de jouer à L’Autre Rivage"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="hero-visual">
+            <div class="hero-frame">
+              <img
+                src="assets/images/joueurs-jdr-rivage.jpg"
+                alt="Des joueurs autour d’une table en train de jouer à L’Autre Rivage"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="systems-strip">
+      <section class="systems-strip" aria-label="Régions du Rivage">
         <div class="container">
           <h2 class="strip-title">LES TERRES DU RIVAGE</h2>
 
@@ -118,13 +124,13 @@
           <h2 class="section-title center">BLINDÉ DE CONTENU</h2>
 
           <div class="feature-showcase">
-            <div class="feature-tabs">
-              <button class="feature-tab active" data-feature="0">Lore</button>
-              <button class="feature-tab" data-feature="1">Bestiaire</button>
-              <button class="feature-tab" data-feature="2">JDR</button>
-              <button class="feature-tab" data-feature="3">Loot & Craft</button>
-              <button class="feature-tab" data-feature="4">Cartes</button>
-              <button class="feature-tab" data-feature="5">Archives PDF</button>
+            <div class="feature-tabs" role="tablist" aria-label="Contenus du Rivage">
+              <button class="feature-tab active" data-feature="0" type="button">Lore</button>
+              <button class="feature-tab" data-feature="1" type="button">Bestiaire</button>
+              <button class="feature-tab" data-feature="2" type="button">JDR</button>
+              <button class="feature-tab" data-feature="3" type="button">Loot &amp; Craft</button>
+              <button class="feature-tab" data-feature="4" type="button">Cartes</button>
+              <button class="feature-tab" data-feature="5" type="button">Archives PDF</button>
             </div>
 
             <div class="feature-stage">
@@ -155,20 +161,20 @@
               </article>
 
               <article class="feature-panel" data-panel="2">
-                    <div class="feature-media">
-                      <img
-                        src="assets/images/des-interface-rivage.jpg"
-                        alt="Interface de lancer de dés du jeu de rôle L’Autre Rivage"
-                      />
-                    </div>
-                    <div class="feature-content">
-                      <h3>Le système de dés du Rivage</h3>
-                      <p>
-                        Lancez les dés rapidement avec une interface claire, lisible et pensée pour le jeu.
-                        Jets simples, actions, résultats visibles, rythme rapide :
-                        le système doit donner envie de jouer immédiatement.
-                      </p>
-                    </div>
+                <div class="feature-media">
+                  <img
+                    src="assets/images/des-interface-rivage.jpg"
+                    alt="Interface de lancer de dés du jeu de rôle L’Autre Rivage"
+                  />
+                </div>
+                <div class="feature-content">
+                  <h3>Le système de dés du Rivage</h3>
+                  <p>
+                    Lancez les dés rapidement avec une interface claire, lisible et pensée pour le jeu.
+                    Jets simples, actions, résultats visibles, rythme rapide :
+                    le système doit donner envie de jouer immédiatement.
+                  </p>
+                </div>
               </article>
 
               <article class="feature-panel" data-panel="3">
@@ -224,7 +230,7 @@
               <div class="details-content">
                 Commencez par les fragments du lore, les régions et les grandes menaces
                 pour comprendre l’identité du Rivage.
-                <a href="lore/">Ouvrir le lore</a>
+                <a href="univers/">Ouvrir le lore</a>
               </div>
             </details>
 
@@ -357,7 +363,9 @@
         panels.forEach((p) => p.classList.remove("active"));
 
         tab.classList.add("active");
-        document.querySelector(`.feature-panel[data-panel="${target}"]`)?.classList.add("active");
+        document
+          .querySelector(`.feature-panel[data-panel="${target}"]`)
+          ?.classList.add("active");
       });
     });
   </script>
