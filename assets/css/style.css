@@ -259,15 +259,30 @@ summary {
   min-height: 420px;
   object-fit: cover;
 }
+.feature-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-panel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
 
 .feature-media {
-  background: rgba(0, 0, 0, 0.18);
+  display: flex;
+  justify-content: center;
 }
 
 .feature-media img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 1100px;
+  height: 620px;
   object-fit: cover;
+  border-radius: 16px;
+
 }
 
 /* BUTTONS */
