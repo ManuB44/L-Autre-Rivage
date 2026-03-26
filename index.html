@@ -28,49 +28,6 @@
   />
 
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <style>
-    .video-section {
-      padding: 80px 0;
-    }
-
-    .video-box {
-      max-width: 1000px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      background: #05070d;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .video-box video {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      background: #000;
-    }
-
-    .video-caption {
-      max-width: 780px;
-      margin: 20px auto 0;
-      text-align: center;
-      opacity: 0.9;
-      color: var(--text-soft);
-    }
-
-    @media (max-width: 720px) {
-      .video-section {
-        padding: 60px 0;
-      }
-
-      .video-caption {
-        font-size: 0.98rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="page">
@@ -136,15 +93,17 @@
 
           <div class="hero-frame">
             <video
-              autoplay
+              class="hero-video"
+              controls
               muted
               loop
               playsinline
               preload="metadata"
-              poster="assets/images/hero-rivage.jpg"
+              poster="https://drive.google.com/file/d/1xrotrsjG2O0ff5Likx6JGY6ioprEKxhg/view?usp=drive_link"
               aria-label="Vidéo d’ambiance de L’Autre Rivage"
             >
-              <source src="assets/videos/rivage-video.mp4" type="video/mp4" />
+              <source src="https://drive.google.com/file/d/1xrotrsjG2O0ff5Likx6JGY6ioprEKxhg/view?usp=drive_link" type="video/mp4" />
+              <source src="https://drive.google.com/file/d/1xrotrsjG2O0ff5Likx6JGY6ioprEKxhg/view?usp=drive_link" type="video/webm" />
               Votre navigateur ne prend pas en charge la lecture vidéo.
             </video>
           </div>
@@ -254,7 +213,7 @@
 
               <article class="feature-panel" data-panel="5">
                 <div class="feature-media">
-                  <img src="assets/images/finale-rivage.jpg" alt="Archives PDF du Rivage" />
+                  <img src="https://drive.google.com/file/d/1xrotrsjG2O0ff5Likx6JGY6ioprEKxhg/view?usp=drive_link" alt="Archives PDF du Rivage" />
                 </div>
                 <div class="feature-content">
                   <h3>Des archives prêtes à lire et jouer</h3>
@@ -280,6 +239,7 @@
               poster="assets/images/finale-rivage.jpg"
             >
               <source src="assets/videos/rivage-video.mp4" type="video/mp4" />
+              <source src="assets/videos/rivage-video.webm" type="video/webm" />
               Votre navigateur ne prend pas en charge la lecture vidéo.
             </video>
           </div>
