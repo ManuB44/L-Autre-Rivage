@@ -18,7 +18,7 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1xrotrsjG2O0ff5Likx6JGY6ioprEKxhg&sz=w2000" />
+  <meta property="og:image" content="assets/images/hero-rivage.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -65,31 +65,50 @@
     </header>
 
     <main>
-        <section class="video-section">
-          <div class="container">
-            <h2 class="section-title center">VOIR L’AUTRE RIVAGE EN VIDÉO</h2>
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
-            <div class="video-box">
-              <video
-                class="video-player"
-                controls
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                poster="assets/images/finale-rivage.jpg"
-              >
-                <source src="assets/videos/rivage-video.mp4" type="video/mp4" />
-              </video>
-            </div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Fantasy sombre • Lore • Bestiaire • Jeu de rôle</p>
 
-            <p class="video-caption">
-              Découvrez l’ambiance du Rivage à travers une vidéo immersive entre brume,
-              ruines, créatures et départ en mission.
+            <h1>Entrez dans le Rivage brisé</h1>
+
+            <p class="hero-lead">
+              La faille s’est ouverte. Les terres ont cédé. Les Sentinelles tiennent encore.
             </p>
+
+            <p class="hero-text">
+              Explorez un monde ravagé par les brumes, les créatures et les ruines anciennes.
+              Découvrez le lore, le bestiaire, les règles du JDR et les archives officielles
+              de L’Autre Rivage.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#commencer" class="btn btn-primary">Entrer dans le Rivage</a>
+              <a href="bibliotheque/" class="btn btn-secondary">Voir les archives</a>
+            </div>
           </div>
-        </section>
+
+          <div class="hero-frame">
+            <video
+              class="hero-video"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/images/hero-rivage.jpg"
+              aria-label="Vidéo d’ambiance de L’Autre Rivage"
+            >
+              <source src="assets/videos/rivage-video.mp4" type="video/mp4" />
+              Votre navigateur ne prend pas en charge la lecture vidéo.
+            </video>
+          </div>
+        </div>
+      </section>
 
       <section class="systems-strip" aria-label="Régions du Rivage">
         <div class="container">
@@ -209,28 +228,6 @@
               </article>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="video-section">
-        <div class="container">
-          <h2 class="section-title center">VOIR L’AUTRE RIVAGE EN VIDÉO</h2>
-
-          <div class="video-box">
-            <iframe
-              class="video-iframe"
-              src="https://drive.google.com/file/d/1xrotrsjG2O0ff5Likx6JGY6ioprEKxhg/preview"
-              title="Vidéo immersive de L’Autre Rivage"
-              allow="autoplay"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-
-          <p class="video-caption">
-            Découvrez l’ambiance du Rivage à travers une vidéo immersive entre brume,
-            ruines, créatures et départ en mission.
-          </p>
         </div>
       </section>
 
