@@ -16,6 +16,17 @@ content="Découvre la région des Marais de Verre de L’Autre Rivage : eaux dor
 
 </head>
 
+<script>
+const links = document.querySelectorAll(".site-nav a");
+const current = window.location.pathname;
+
+links.forEach(link => {
+  if (current.includes(link.getAttribute("href"))) {
+    link.classList.add("active");
+  }
+});
+</script>
+
 <body>
 
 
